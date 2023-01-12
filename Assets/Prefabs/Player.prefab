@@ -21,7 +21,7 @@ GameObject:
   - component: {fileID: 2310515809837556265}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -82,15 +82,15 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 1071333563, guid: 4e7e64bcdb36bdc44929ab32ea80b49d, type: 3}
+  m_Sprite: {fileID: 788510832, guid: 5b7802984e2686b4db8f38324ec03591, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 6.98, y: 7}
+  m_Size: {x: 1.4266666, y: 2.8666666}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 0
+  m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!50 &2310515809837556274
@@ -127,18 +127,18 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.114071965, y: -0.22468692}
+  m_Offset: {x: 0.064396024, y: -0.09897709}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.5428572, y: 1.9357142}
-    newSize: {x: 6.98, y: 7}
+    oldSize: {x: 1.4266666, y: 2.8666666}
+    newSize: {x: 1.4266666, y: 2.8666666}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.9975505, y: 1.453838}
+  m_Size: {x: 1.0663326, y: 2.516921}
   m_EdgeRadius: 0
 --- !u!114 &2310515809837556279
 MonoBehaviour:
@@ -152,15 +152,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3c4208f271e1d4041ae1c654bc4933bc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  KBForce: 5
+  KBCounter: 0.2
+  KBTotalTime: 0
+  KnockFromRight: 1
   jumpableGround:
     serializedVersion: 2
     m_Bits: 64
   moveSpeed: 7
-  jumpForce: 10
+  jumpForce: 12
   jumpSoundEffect: {fileID: 2310515809837556266}
 --- !u!95 &2310515809837556278
 Animator:
-  serializedVersion: 4
+  serializedVersion: 5
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -177,7 +181,7 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
+  m_KeepAnimatorStateOnDisable: 0
 --- !u!114 &2310515809837556276
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -205,6 +209,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   deathSoundEffect: {fileID: 2310515809837556265}
+  hearths: []
 --- !u!82 &2310515809837556266
 AudioSource:
   m_ObjectHideFlags: 0

@@ -9,6 +9,11 @@ public class PlayerMovement : MonoBehaviour
     private SpriteRenderer sprite;
     private Animator anim;
 
+    public float KBForce;
+    public float KBCounter;
+    public float KBTotalTime;
+    public bool KnockFromRight;
+
     [SerializeField] private LayerMask jumpableGround;
 
     private float dirX = 0f;
@@ -19,7 +24,6 @@ public class PlayerMovement : MonoBehaviour
 
     [SerializeField] private AudioSource jumpSoundEffect; 
 
-    // Start is called before the first frame update
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -28,16 +32,29 @@ public class PlayerMovement : MonoBehaviour
         anim = GetComponent<Animator>();
     }
 
-    // Update is called once per frame
     private void Update()
     {
+        if (KBCounter <= 0)
+        {
+            dirX = Input.GetAxisRaw("Horizontal");
+            rb.velocity = new Vector2(dirX * moveSpeed, rb.velocity.y);
+        }
+        else
+        {
+            if (KnockFromRight == true)
+            {
+                rb.velocity = new Vector2(-KBForce, KBForce);
+            }
+            if (KnockFromRight == false)
+            {
+                rb.velocity = new Vector2(KBForce, KBForce);
+            }
 
-        dirX = Input.GetAxisRaw("Horizontal");
-        rb.velocity = new Vector2(dirX * moveSpeed, rb.velocity.y);
+            KBCounter -= Time.deltaTime;
+        }
 
         if (Input.GetButtonDown("Jump") && IsGrounded())
         {
-            jumpSoundEffect.Play();
             rb.velocity = new Vector2(rb.velocity.x, jumpForce);
         }
 
