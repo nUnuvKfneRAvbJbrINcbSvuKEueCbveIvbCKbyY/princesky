@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -10,7 +11,7 @@ public class Finish : MonoBehaviour
     private bool levelCompleted = false;
 
     // Start is called before the first frame update
-    void Start()
+    private void Start()
     {
         finishSound = GetComponent<AudioSource>();
     }
@@ -27,6 +28,7 @@ public class Finish : MonoBehaviour
 
     private void CompleteLevel()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);  
+        PlayerPrefsManager.Instance.SetLevelOpen(Extensions.GetNextLevelFromCurrentScene(SceneManager.GetActiveScene().name));
+        SceneManager.LoadScene("Menu Scene");
     }
 }
