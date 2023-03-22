@@ -49,3 +49,15 @@ TagManager:
   - name: Terrain
     uniqueID: 2774967993
     locked: 0
+  - name: Topanky
+    uniqueID: 1274543001
+    locked: 0
+  - name: Saty
+    uniqueID: 2270169321
+    locked: 0
+  - name: Makeup
+    uniqueID: 662375813
+    locked: 0
+  - name: Doplnky
+    uniqueID: 1771858867
+    locked: 0
