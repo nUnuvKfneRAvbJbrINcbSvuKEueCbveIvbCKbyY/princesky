@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Box
   - Trap
+  - Button
   layers:
   - Default
   - TransparentFX
