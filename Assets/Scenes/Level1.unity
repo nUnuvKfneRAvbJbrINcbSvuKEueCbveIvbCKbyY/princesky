@@ -65513,11 +65513,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2310515809837556273, guid: ac377fb82a696d54db509c264686c7b0, type: 3}
       propertyPath: m_Size.x
-      value: 2
+      value: 1.4266666
       objectReference: {fileID: 0}
     - target: {fileID: 2310515809837556273, guid: ac377fb82a696d54db509c264686c7b0, type: 3}
       propertyPath: m_Size.y
-      value: 2
+      value: 2.8666666
       objectReference: {fileID: 0}
     - target: {fileID: 2310515809837556273, guid: ac377fb82a696d54db509c264686c7b0, type: 3}
       propertyPath: m_Sprite
